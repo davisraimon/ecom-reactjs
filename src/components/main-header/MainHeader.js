@@ -45,7 +45,9 @@ export default class MainHeader extends Component {
                 onMouseEnter={() => this.setState({ focus: nav.name })}
                 onMouseLeave={() => this.setState({ focus: "" })}
                 className="nav-menu"
-                style={{ display: this.state.focus == nav.name ? "" : "none" }}
+                style={{
+                  display: this.state.focus == nav.name ? "" : "none",
+                }}
               >
                 <div
                   style={{
@@ -84,9 +86,39 @@ export default class MainHeader extends Component {
           />
         </div>
         <div className="header-actions">
-          <div>Signin</div>
-          <div>Wishlist</div>
+          <div>About</div>
           <div>Cart</div>
+          <div
+            className="header-account-action-nav"
+            onMouseEnter={() => this.setState({ accountMenu: true })}
+            onMouseLeave={() => this.setState({ accountMenu: false })}
+            onClick={() => this.props.history.push("/")}
+          >
+            Account
+          </div>
+          {this.state.accountMenu ? (
+            <div
+              onMouseEnter={() => this.setState({ accountMenu: true })}
+              onMouseLeave={() => this.setState({ accountMenu: false })}
+              className="header-account-action-sub-div"
+            >
+              {localStorage.getItem("token") &&
+              localStorage.getItem("token") == "sampletoken" ? (
+                <div
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    this.setState({ accountMenu: false });
+                    this.props.history.push("/");
+                  }}
+                  className="submit-button"
+                >
+                  Sign Out
+                </div>
+              ) : (
+                <div className="submit-button">Sign In</div>
+              )}
+            </div>
+          ) : null}
         </div>
       </div>
     );

@@ -5,7 +5,10 @@ export default class MainBanner extends Component {
   render() {
     return (
       <div className="main-banner">
-        <img src={this.props.src}></img>
+        <img
+          src={this.props.src}
+          style={{ height: this.props.height ? this.props.height : "" }}
+        ></img>
       </div>
     );
   }

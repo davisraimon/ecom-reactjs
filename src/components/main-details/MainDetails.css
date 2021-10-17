@@ -1,0 +1,8 @@
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 64px 0px 64px;
+  margin: 0px auto 0px auto;
+  max-width: 1012px;
+  margin-bottom: 16px;
+}
