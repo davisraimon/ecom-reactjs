@@ -71,7 +71,9 @@ export default class AccountMenu extends Component {
             <div>Install Windows App</div>
             <div style={{ fontSize: 15 }}></div>
           </div>
-          <div className="account-list-item">Help</div>
+          <div className="account-list-item">
+            Help <i class="fas fa-external-link-alt"></i>
+          </div>
           <div className="account-list-item">Terms and privacy</div>
           <div className="account-list-item">
             {localStorage.getItem("token") &&

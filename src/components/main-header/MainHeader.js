@@ -20,6 +20,11 @@ export default class MainHeader extends Component {
     this.setState({ accountMenu: false });
   };
   render() {
+    let token =
+      localStorage.getItem("token") &&
+      localStorage.getItem("token") == "sampletoken"
+        ? true
+        : false;
     return (
       <div className="main-header-container">
         <div className="header-logo">
@@ -40,13 +45,21 @@ export default class MainHeader extends Component {
                     ? "header-navs-item active"
                     : "header-navs-item"
                 }
-                onMouseEnter={() => this.setState({ focus: nav.name })}
+                onMouseEnter={() => {
+                  if (token) {
+                    this.setState({ focus: nav.name });
+                  }
+                }}
                 onMouseLeave={() => this.setState({ focus: "" })}
               >
                 {nav.displayname}
               </div>
               <div
-                onMouseEnter={() => this.setState({ focus: nav.name })}
+                onMouseEnter={() => {
+                  if (token) {
+                    this.setState({ focus: nav.name });
+                  }
+                }}
                 onMouseLeave={() => this.setState({ focus: "" })}
                 className="nav-menu"
                 style={{
@@ -93,22 +106,23 @@ export default class MainHeader extends Component {
           <div>About</div>
           <div>Cart</div>
           <div
-            className="header-account-action-nav"
+            className={
+              this.state.accountMenu
+                ? "header-account-action-nav border-bottom"
+                : "header-account-action-nav"
+            }
             onClick={() =>
               this.setState({ accountMenu: !this.state.accountMenu })
             }
-            // onMouseLeave={() => this.setState({ accountMenu: false })}
-            // onClick={() => this.props.history.push("/")}
           >
             Account
           </div>
           {this.state.accountMenu ? (
-            <div
-              // onMouseEnter={() => this.setState({ accountMenu: true })}
-              // onMouseLeave={() => this.setState({ accountMenu: false })}
-              className="header-account-action-sub-div"
-            >
-              <AccountMenu {...this.props} closeAccountMenu={this.closeAccountMenu}></AccountMenu>
+            <div className="header-account-action-sub-div">
+              <AccountMenu
+                {...this.props}
+                closeAccountMenu={this.closeAccountMenu}
+              ></AccountMenu>
             </div>
           ) : null}
         </div>
