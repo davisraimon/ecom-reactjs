@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { navData, navMenuData } from "../../config-data/MainData";
 import { Redirect } from "react-router-dom";
+import AccountMenu from "../account-menu/AccountMenu";
 import "./MainHeader.css";
 
 export default class MainHeader extends Component {
@@ -14,6 +15,9 @@ export default class MainHeader extends Component {
   redirectTo = (link) => {
     localStorage.setItem("currentCategory", link);
     this.setState({ subcategoryLink: link, focus: "" });
+  };
+  closeAccountMenu = () => {
+    this.setState({ accountMenu: false });
   };
   render() {
     return (
@@ -90,33 +94,21 @@ export default class MainHeader extends Component {
           <div>Cart</div>
           <div
             className="header-account-action-nav"
-            onMouseEnter={() => this.setState({ accountMenu: true })}
-            onMouseLeave={() => this.setState({ accountMenu: false })}
-            onClick={() => this.props.history.push("/")}
+            onClick={() =>
+              this.setState({ accountMenu: !this.state.accountMenu })
+            }
+            // onMouseLeave={() => this.setState({ accountMenu: false })}
+            // onClick={() => this.props.history.push("/")}
           >
             Account
           </div>
           {this.state.accountMenu ? (
             <div
-              onMouseEnter={() => this.setState({ accountMenu: true })}
-              onMouseLeave={() => this.setState({ accountMenu: false })}
+              // onMouseEnter={() => this.setState({ accountMenu: true })}
+              // onMouseLeave={() => this.setState({ accountMenu: false })}
               className="header-account-action-sub-div"
             >
-              {localStorage.getItem("token") &&
-              localStorage.getItem("token") == "sampletoken" ? (
-                <div
-                  onClick={() => {
-                    localStorage.removeItem("token");
-                    this.setState({ accountMenu: false });
-                    this.props.history.push("/");
-                  }}
-                  className="submit-button"
-                >
-                  Sign Out
-                </div>
-              ) : (
-                <div className="submit-button">Sign In</div>
-              )}
+              <AccountMenu {...this.props} closeAccountMenu={this.closeAccountMenu}></AccountMenu>
             </div>
           ) : null}
         </div>
