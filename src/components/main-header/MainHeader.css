@@ -67,7 +67,6 @@
   -webkit-transition: all 0.5s ease-in-out;
   border-bottom: 3px solid;
   border-bottom-color: #ee5f73;
-  opacity: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .nav-sub-links {
