@@ -7,6 +7,12 @@ const Login = React.lazy(() => import("../views/login/Login"));
 // Static Routes
 var indexRoutes = [
   { path: "/shop/", name: "Home", component: Home },
+
+  { path: "/shop/men", name: "Home", component: Home },
+  { path: "/shop/women", name: "Home", component: Home },
+  { path: "/shop/lifestyle", name: "Home", component: Home },
+  { path: "/shop/living", name: "Home", component: Home },
+  { path: "/shop/beauty", name: "Home", component: Home },
   { path: "/", name: "Login", component: Login },
 ];
 

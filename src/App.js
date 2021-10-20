@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Router history={history}>
-        <MainHeader></MainHeader>
+        <MainHeader history={history}></MainHeader>
         <Suspense fallback={<div>loading a new shopping experience...</div>}>
           <Switch>
             {indexRoutes.map((route, key) => {

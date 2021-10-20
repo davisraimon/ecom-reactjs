@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { navData, navMenuData } from "../../config-data/MainData";
 import { Redirect } from "react-router-dom";
+import AccountMenu from "../account-menu/AccountMenu";
 import "./MainHeader.css";
 
 export default class MainHeader extends Component {
@@ -15,7 +16,15 @@ export default class MainHeader extends Component {
     localStorage.setItem("currentCategory", link);
     this.setState({ subcategoryLink: link, focus: "" });
   };
+  closeAccountMenu = () => {
+    this.setState({ accountMenu: false });
+  };
   render() {
+    let token =
+      localStorage.getItem("token") &&
+      localStorage.getItem("token") == "sampletoken"
+        ? true
+        : false;
     return (
       <div className="main-header-container">
         <div className="header-logo">
@@ -36,16 +45,26 @@ export default class MainHeader extends Component {
                     ? "header-navs-item active"
                     : "header-navs-item"
                 }
-                onMouseEnter={() => this.setState({ focus: nav.name })}
+                onMouseEnter={() => {
+                  if (token) {
+                    this.setState({ focus: nav.name });
+                  }
+                }}
                 onMouseLeave={() => this.setState({ focus: "" })}
               >
                 {nav.displayname}
               </div>
               <div
-                onMouseEnter={() => this.setState({ focus: nav.name })}
+                onMouseEnter={() => {
+                  if (token) {
+                    this.setState({ focus: nav.name });
+                  }
+                }}
                 onMouseLeave={() => this.setState({ focus: "" })}
                 className="nav-menu"
-                style={{ display: this.state.focus == nav.name ? "" : "none" }}
+                style={{
+                  display: this.state.focus == nav.name ? "" : "none",
+                }}
               >
                 <div
                   style={{
@@ -84,9 +103,28 @@ export default class MainHeader extends Component {
           />
         </div>
         <div className="header-actions">
-          <div>Signin</div>
-          <div>Wishlist</div>
+          <div>About</div>
           <div>Cart</div>
+          <div
+            className={
+              this.state.accountMenu
+                ? "header-account-action-nav border-bottom"
+                : "header-account-action-nav"
+            }
+            onClick={() =>
+              this.setState({ accountMenu: !this.state.accountMenu })
+            }
+          >
+            Account
+          </div>
+          {this.state.accountMenu ? (
+            <div className="header-account-action-sub-div">
+              <AccountMenu
+                {...this.props}
+                closeAccountMenu={this.closeAccountMenu}
+              ></AccountMenu>
+            </div>
+          ) : null}
         </div>
       </div>
     );

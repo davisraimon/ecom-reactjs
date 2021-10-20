@@ -14,8 +14,16 @@ export const navMenuData = {
       link: "topwear",
       subcategories: [
         { category: "one", displayname: "T-Shirts", link: "men-tee" },
-        { category: "two", displayname: "Casual Shirts", link: "men-casual-shirts" },
-        { category: "three", displayname: "Formal Shirts", link: "men-formal-shirts" },
+        {
+          category: "two",
+          displayname: "Casual Shirts",
+          link: "men-casual-shirts",
+        },
+        {
+          category: "three",
+          displayname: "Formal Shirts",
+          link: "men-formal-shirts",
+        },
         { category: "four", displayname: "Jackets", link: "men-jackets" },
       ],
     },
@@ -25,8 +33,16 @@ export const navMenuData = {
       link: "bottomwear",
       subcategories: [
         { category: "one", displayname: "Jeans", link: "men-jeans" },
-        { category: "two", displayname: "Casual Trousers", link: "men-casual-trousers" },
-        { category: "three", displayname: "Formal Trousers", link: "men-formal-trousers" },
+        {
+          category: "two",
+          displayname: "Casual Trousers",
+          link: "men-casual-trousers",
+        },
+        {
+          category: "three",
+          displayname: "Formal Trousers",
+          link: "men-formal-trousers",
+        },
       ],
     },
     {
@@ -35,8 +51,16 @@ export const navMenuData = {
       link: "footware",
       subcategories: [
         { category: "one", displayname: "Sandals", link: "men-sandals" },
-        { category: "two", displayname: "Formal Shoes", link: "mem-formal-shoes" },
-        { category: "three", displayname: "Casual Shoes", link: "men-casual-shoes" },
+        {
+          category: "two",
+          displayname: "Formal Shoes",
+          link: "mem-formal-shoes",
+        },
+        {
+          category: "three",
+          displayname: "Casual Shoes",
+          link: "men-casual-shoes",
+        },
         { category: "four", displayname: "Sports", link: "men-sports-shoes" },
         { category: "five", displayname: "Sneakers", link: "men-sneakers" },
         { category: "six", displayname: "Socks", link: "men-socks" },
@@ -53,7 +77,11 @@ export const navMenuData = {
         { category: "three", displayname: "Trimmers", link: "men-trimmers" },
         { category: "three", displayname: "Rings", link: "men-rings" },
         { category: "three", displayname: "Hats", link: "men-hats" },
-        { category: "three", displayname: "Wristwares", link: "men-wristwares" },
+        {
+          category: "three",
+          displayname: "Wristwares",
+          link: "men-wristwares",
+        },
       ],
     },
   ],
@@ -261,3 +289,50 @@ export const navMenuData = {
     },
   ],
 };
+
+export const BannerMappingData = {
+  "home-shop": "/banners/main-banners/main-banner1.jpg",
+  "men-tee": "/banners/main-banners/main-banner2.png",
+  "men-casual-shirts": "/banners/main-banners/main-banner3.png",
+  "men-formal-shirts": "/banners/main-banners/main-banner4.png",
+  "men-jackets": "/banners/main-banners/main-banner3.png",
+};
+
+export const TopSectionImagesMapping = [
+  {
+    src: "https://img0.junaroad.com/images/icons/male_jeans.png",
+    caption: "Trousers",
+  },
+  {
+    src: "https://img0.junaroad.com/images/icons/tshirt.png",
+    caption: "Shirts",
+  },
+  {
+    src: "https://img0.junaroad.com/images/icons/male_jeans.png",
+    caption: "Jeans",
+  },
+  {
+    src: "https://img0.junaroad.com/images/icons/kids_boys.png",
+    caption: "Kids",
+  },
+  {
+    src: "https://img0.junaroad.com/images/icons/male_jeans.png",
+    caption: "Accessories",
+  },
+  {
+    src: "https://img0.junaroad.com/images/icons/tshirt.png",
+    caption: "Shirts",
+  },
+  {
+    src: "https://img0.junaroad.com/images/icons/male_jeans.png",
+    caption: "Accessories",
+  },
+  {
+    src: "https://img0.junaroad.com/images/icons/kids_boys.png",
+    caption: "Kids",
+  },
+  {
+    src: "https://img0.junaroad.com/images/icons/homedecormen.png",
+    caption: "Home",
+  },
+];

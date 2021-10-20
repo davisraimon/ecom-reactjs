@@ -1,0 +1,8 @@
+.top-section {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 12px auto 16px auto;
+}

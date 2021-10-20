@@ -1,0 +1,22 @@
+.image-round {
+  height: 48px;
+  width: 48px;
+}
+.image-caption {
+  font-size: 11px;
+}
+.image-round-container {
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+}
+.image-round-container:hover span {
+  border-bottom: 2px solid #ee5f73;
+  color: #ee5f73;
+}
+.image-round-container:hover img {
+  transform: scale(1.1);
+}
+.image-round-container img {
+  transition: all 0.2s ease-in-out;
+}

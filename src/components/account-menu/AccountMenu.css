@@ -1,0 +1,39 @@
+.top-account-section {
+  display: flex;
+  border-radius: 5px;
+  margin: 12px;
+  padding: 8px;
+}
+.top-account-section:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.top-account-section img {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+.profile-name {
+  text-align: left;
+  margin-left: 8px;
+}
+.profile-avatar {
+  margin: auto 0px auto 0px;
+}
+
+.middle-account-section {
+  margin: 12px;
+}
+.account-list-item {
+  text-align: left;
+  padding: 8px;
+  font-weight: 500;
+}
+.account-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+}
+
+.bottom-account-section {
+  margin: 12px;
+}
