@@ -4,18 +4,11 @@ import ImageRound from "../cards/image-card/ImageRound";
 import "./TopSection.css";
 
 export default class TopSection extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div className="top-section">
         {TopSectionImagesMapping.map((item) => (
-          <ImageRound
-            src={item.src}
-            caption={item.caption}
-            link=""
-          ></ImageRound>
+          <ImageRound src={item.src} caption={item.caption}></ImageRound>
         ))}
       </div>
     );
