@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TopSectionImagesMapping } from "../../config-data/MainData";
 import ImageRound from "../cards/image-card/ImageRound";
-import "./TopSection.css"
+import "./TopSection.css";
 
 export default class TopSection extends Component {
   render() {
