@@ -21,7 +21,6 @@ export default class Home extends Component {
     if (token == "sampletoken") {
       return (
         <div style={{ padding: "16px 32px 32px 16px" }}>
-          {/* {currentCategory && currentCategory != "" ? currentCategory : null} */}
           <TopSection></TopSection>
           <MainBanner src={banner_src} height={height}></MainBanner>
           <MainDetails></MainDetails>
