@@ -75,7 +75,7 @@ export default class AccountMenu extends Component {
             Help <i class="fas fa-external-link-alt"></i>
           </div>
           <div className="account-list-item">Terms and privacy</div>
-          <div className="account-list-item">
+          {/* <div className="account-list-item">
             {localStorage.getItem("token") &&
             localStorage.getItem("token") == "sampletoken" ? (
               <div
@@ -88,10 +88,23 @@ export default class AccountMenu extends Component {
               >
                 Sign Out
               </div>
-            ) : (
-              <div style={{ borderRadius: 5 }}>Sign In</div>
+            ) : null}
+          </div> */}
+          {localStorage.getItem("token") &&
+            localStorage.getItem("token") == "sampletoken" && (
+              <div className="account-list-item">
+                <div
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    this.props.closeAccountMenu();
+                    this.props.history.push("/");
+                  }}
+                  style={{ borderRadius: 5 }}
+                >
+                  Sign Out
+                </div>
+              </div>
             )}
-          </div>
         </div>
       </div>
     );
